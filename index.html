@@ -124,7 +124,7 @@ The Angular injector subsystem is in charge of creating components, resolving th
 </section>
 	
 	
-
+<section>
 	<section id="controllers">
 		<h2>Controller recipe</h2>
 		  <pre><code class="javascript" contenteditable data-trim>
@@ -147,6 +147,33 @@ The Angular injector subsystem is in charge of creating components, resolving th
 &lt/html&gt
 		  </code></pre>
 	</section>
+	
+	<section>
+		<h2>Controller recipe - alternative</h2>
+		  <pre><code class="javascript" contenteditable data-trim>
+	angular.module('someModule').controller('MyFirstController', function($scope){
+    'use strict';
+	
+    var cntl = this;
+	
+    this.helloWorld = 'hello world!';
+    alert(this.helloWorld);
+});
+		</code></pre>
+				<pre><code class="html" contenteditable data-trim>
+<!--use controller in the dialog template with the ng-controller directive -->
+&lt!DOCTYPE html&gt
+&lthtml&gt
+    &ltbody&gt
+        &ltsection data-ng-controller="MyFirstController as cntl"&gt
+            &lth2&gtHello from Dialog A!&lt/h2&gt
+	    &ltspan&gt{{cntl.helloWorld}}&lt/span&gt
+        &lt/section&gt
+    &lt/body&gt
+&lt/html&gt
+		  </code></pre>
+	</section>
+</section>
 
 <section>
 	<section id="services-factories">
@@ -194,6 +221,27 @@ angular.module('someModule').factory('myService2', function(){
 			<li>ngShow / ngHide - showing / hiding HTML element</li>
 			<li>ngIf - removes or recreates a portion of DOM</li>
 		</ul>
+	</section>
+	
+	<section>
+		<h2>Exercise 1</h2>
+		<small>
+		<ol>
+			<li>Implement booksListCntl in the file books-list.controller.js</li>
+			<ul>
+				<li>add book array to the controller model - it should containt objects with title, author, genre, year properties</li>
+				<li>add controller method for storing selected book table row index. It should set selected index to undefined when selected row is selected again</li>
+				<li>add controller method for checking if the table row is selected</li>
+			</ul>
+		<li>Implement books-list.tpl.html template</li>
+		<ul>
+			<li>add html table into books-list.tpl.html template. Use ngRepeat and ngBind directives to display books in the table</li>
+			<li>add three buttons under the table - Edit, Create and Delete</li>
+			<li>highlight selected row (css active class) when it is clicked (ngClass and ngClick directives)</li>
+			<li>edit and delete buttons should be disabled when there is no table row selected (ngDisabled directive)</li>
+		</ul>
+</ol>
+</small>
 	</section>
 </section>
 
