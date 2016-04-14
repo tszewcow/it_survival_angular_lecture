@@ -374,6 +374,34 @@ $http.post('/someUrl', data, config).then(successCallback, errorCallback);
 			</ul>
 			<p><small><a href="https://docs.angularjs.org/api/ng/service/$http">https://docs.angularjs.org/api/ng/service/$http</a></small></p>
 	</section>
+	<section>
+	<h2>Exercise 4</h2>
+		<small>
+			<ol>
+				<li>Implement angular service for backend communication - booksData</li>
+				<li>booksData service should have the following methods:</li>
+				<ul>
+					<li>getBooks: $http.get('http://localhost:9000/services/books', {params: searchParams});</li>
+					<li>addBook: $http.post('http://localhost:9000/services/book', book);</li>
+					<li>updateBook: $http.put('http://localhost:9000/services/book', book);</li>
+					<li>deleteBook: $http.delete('http://localhost:9000/services/book/' + id);</li>
+				</ul>
+				<li>Inject booksData service into controllers in order to support backend communication</li>
+				<li>Add search form on top of the book-list dialog</li>
+				<ul>
+					<li>Hide the table when no results are found (use ngShow / ngHide)</li>
+					<li>After clicking search button - pass the search params into booksData get method and copy the results into controller model</li>
+				</ul>
+				<li>1st stream - get books from the json file. Other methods should be written, but they won't work due to missing server implementation</li>
+			</ol>
+		</small>
+		<p>Branch with fallback solution: step-5-backend-communication</p>
+	</section>
+	
+	<section>
+		<h2>Exercise 4 solution mockup</h2>
+		<img src="img/exercise_4.PNG" />
+	</section>
 	
 		
 </section>
