@@ -229,7 +229,7 @@ angular.module('someModule').factory('myService2', function(){
 			<ol>
 				<li>Implement booksListCntl in the file books-list.controller.js</li>
 				<ul>
-					<li>add book array to the controller model - it should containt objects with title, author, genre, year properties</li>
+					<li>add book array to the controller model - it should contain objects with title, author, genre, year properties</li>
 					<li>add controller method for storing selected book table row index. It should set selected index to undefined when selected row is selected again</li>
 					<li>add controller method for checking if the table row is selected</li>
 				</ul>
@@ -237,13 +237,108 @@ angular.module('someModule').factory('myService2', function(){
 				<ul>
 					<li>add html table into books-list.tpl.html template. Use ngRepeat and ngBind directives to display books in the table</li>
 					<li>add three buttons under the table - Edit, Create and Delete</li>
-					<li>highlight selected row (css active class) when it is clicked (ngClass and ngClick directives)</li>
 					<li>edit and delete buttons should be disabled when there is no table row selected (ngDisabled directive)</li>
+					<li>highlight selected row (css active class) when it is clicked (ngClass and ngClick directives)</li>
 				</ul>
 			</ol>
 		</small>
 		<p>Branch with fallback solution: step-2-first-controller</p>
 	</section>
+	<section>
+		<h2>Exercise 1 solution mockup</h2>
+		<img src="img/exercise_1.PNG" />
+	</section>
+</section>
+
+<section>
+	<section id="forms">
+            <h2>Angular Forms</h2>
+            <img src="img/angular-form.svg">
+			<ul>
+				<li>decoupled the model and the view</li>
+				<li>worries about bidirectional model and view updating</li>
+			</ul>
+        </section>
+	<section>
+		<h2>Form example</h2>
+		<pre><code data-trim class="xml">
+<form name="myForm" novalidate>
+    <input name="firstName" ng-model="user.firstName"/>
+    <input name="lastName" ng-model="user.lastName"/>
+    <input name="email" ng-model="user.email"/>
+    <button ng-click="submit()">Submit</button>
+</form></code></pre>
+
+		<pre><code data-trim class="javascript">
+myForm: {           //form name
+    fistName:{},    //input name
+    lastName:{},    //input name
+    email:{}        //input name
+}
+                </code></pre>
+	</section>
+	
+	<section>
+		<h2>Form validation status</h2>
+		<pre><code contenteditable data-trim>
+myForm: {                                   //form name
+    $dirty: false, $pristine: true,         //dirty or pristine
+    $valid: false, $invalid: true,          //valid or invalid
+    fistName: {                             //input name
+        $dirty: false, $pristine: true,     //dirty or pristine
+        $valid: false, $invalid: true,      //valid or invalid
+        $error: {                           //validation for field
+            required: true,                 //required validation
+            minlength: false                //minlength validation
+        }
+    },
+    email: {}                               //input name
+}
+                </code></pre>
+	</section>
+	
+	<section>
+		<h2>Exercise 2</h2>
+		<small>
+			<ol>
+				<li>Add ui.bootstrap module dependency to the app.books-management module</li>
+				<li>Implement html template for add book modal dialog</li>
+				<ul>
+					<li>Make all four inputs (author, title, genre, year) required (ngRequired)</li>
+					<li>Make author and title inputs valid only when text length >= 3</li>
+					<li>Make year input to accept only numbers from 1900 to 2500 (html input type='number' and min / max attributes)
+					<li>Add has-error classes when fields are $invalid and $dirty</li>
+					<li>Add "Add Book" and "Cancel" buttons - "Add" button is disabled when form is invalid</li>
+				</ul>
+				<li>Implement controller for modal dialog</li>
+				<ul>
+					<li>Create form object and connect it with the form in the html template</li>
+					<li>Add methods for closing modal dialog ($modalInstance.close on add book button, $modalInstance.dismiss on cancel button)</li>
+				</ul>
+				<li>Inject $modal service into BooksListCntl controller</li>
+				<li>Call $modal.open with correct parameter object on Add button click</li>
+			</ol>
+		</small>
+		<p>Branch with fallback solution: step-3-forms</p>
+	</section>
+	
+	<section>
+		<h2>Exercise 2 solution mockup</h2>
+		<img src="img/exercise_2.PNG" />
+	</section>
+	
+	<section>
+		<h2>Exercise 3</h2>
+		<small>
+			<ol>
+				<li>Implement html template for edit modal dialog</li>
+				<li>Dialog should work similar to the Add Book dialog - the difference is that the selected book should be passed to the dialog controller (use resolve object)</li>
+				<li>Call modal edit dialog on Edit button click</li>
+			</ol>
+		</small>
+		<p>Branch with fallback solution: step-4-edit-modal</p>
+	</section>
+		
 </section>
 
 <section>
