@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Angular JS Basics</title>
+
+    <meta name="description" content="IT Survival AngularJS lecture">
+    <meta name="author" content="IT Survival Team">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="base/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="base/reveal.js/css/theme/sky.css" id="theme">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="base/reveal.js/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'base/reveal.js/css/print/pdf.css' : 'base/reveal.js/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="base/reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section id="start">
+    <h3><strong>AngularJS Basics</strong></h3>
+    <h2><img class="logo" src="img/AngularJS-large.png"></h2>
+
+	<p>
+        <small>Marek Matczak, Jarosław Fuczko, Tomasz Szewców</small>
+    </p>
+</section>
+
+	<section id="agenda">
+		<h2>Agenda</h2>
+		<ol>
+			<li><a href="#/modules">Angular Modules</a></li>
+			<li><a href="#/dependncy-injection">Dependency Injection</a></li>
+			<li><a href="#/controllers">Controllers</a></li>
+			<li><a href="#/services-factories">Services and Factories</a></li>
+			<li><a href="#/useful-directives">Useful Directives</a></li>
+			<li><a href="#/forms">Forms</a></li>
+			<li><a href="#/backend-communication">Backend Communication</a></li>
+			<li><a href="#/tests">Tests</a></li>
+		</ol>
+	</section>
+
+<section>
+	<section id="modules">
+		<h3>What is an Angular module?</h3>
+
+		<blockquote>
+        You can think of a module as a <b>container</b> for the different parts of your app – controllers, services,
+        filters, directives, etc.
+    </blockquote>
+		<p><small><a href="https://docs.angularjs.org/guide/module">https://docs.angularjs.org/guide/module</a></small></p>
+	</section>
+	<section>
+		<h3>Module definition and retrieval</h3>
+		<pre><code class="javascript" contenteditable data-trim>
+        // define a module without dependencies
+angular.module('moduleName', []);
+		
+// define a module with dependencies
+angular.module('moduleName', ['dependency1', 'dependency2']);
+		
+// retrieve a module
+angular.module('moduleName');
+      </code></pre>
+	  
+	  <pre><code class="html" contenteditable data-trim>
+        <!--Bootstrap application-->
+<div ng-app='moduleName'></div>
+      </code></pre>
+		
+	</section>
+</section>
+
+<section>
+	<section id="dependncy-injection">
+		<h2>Dependency Injection</h2>
+		<blockquote>
+        Dependency Injection (DI) is a software design pattern that deals with how components get hold of their dependencies.
+		</blockquote>
+		<blockquote>
+The Angular injector subsystem is in charge of creating components, resolving their dependencies, and providing them to other components as requested.
+		</blockquote>
+		<p><small><a href="https://docs.angularjs.org/guide/di">https://docs.angularjs.org/guide/di</a></small></p>
+	</section>
+	<section>
+	<h2>Injecting dependencies</h2>
+	<pre><code class="javascript" contenteditable data-trim>
+	angular.module('moduleName').controller('SomeController', function($scope, someService){
+	'use strict';
+	
+	// add something to injected $scope
+	$scope.data = {};
+		
+	// call injected service method
+	someService.someMethod();
+};
+	</code></pre>
+	</section>
+</section>
+	
+	
+
+	<section id="controllers">
+		<h2>Controller recipe</h2>
+		  <pre><code class="javascript" contenteditable data-trim>
+	angular.module('someModule').controller('MyFirstController', function($scope){
+    'use strict';
+
+    $scope.helloWorld = 'hello world!';
+    alert($scope.helloWorld);
+});
+		</code></pre>
+				<pre><code class="html" contenteditable data-trim>
+<!--use controller in the dialog template with the ng-controller directive -->
+&lt!DOCTYPE html&gt
+&lthtml&gt
+    &ltbody&gt
+        &ltsection data-ng-controller="MyFirstController"&gt
+            &lth2&gtHello from Dialog A!&lt/h2&gt
+        &lt/section&gt
+    &lt/body&gt
+&lt/html&gt
+		  </code></pre>
+	</section>
+
+<section>
+	<section id="services-factories">
+		<h2>Service recipe (with <b>service</b>)</h2>
+		  <pre><code class="javascript" contenteditable data-trim>
+angular.module('someModule').service('myService', function(){
+    'use strict';
+        
+    this.print = function(){
+        alert('hello world from a service');
+    };
+});
+		  </code></pre>
+	</section>
+
+	<section>
+		<h2>Service recipe (with <b>factory</b>)</h2>
+		 <pre><code class="javascript" contenteditable data-trim>
+angular.module('someModule').factory('myService2', function(){
+    'use strict'; 
+        
+    var helloWorld = 'hello world from a service2';
+
+    return {
+        print: function(){
+            alert(helloWorld);
+        }
+    };
+
+});
+		  </code></pre>
+	</section>
+</section>
+
+<section>
+	<section id="useful-directives">
+		<h2>Useful built-in directives</h2>
+		<ul>
+			<li>ngModel - two way binding</li>
+			<li>ngBind - one way binding</li>
+			<li>ngClick - calling an action</li>
+			<li>ngRepeat - repeats the HTML element</li>
+			<li>ngClass - applies css classes to a HTML element</li>
+			<li>ngDisabled - adds the disabled attribute to a HTML element</li>
+			<li>ngShow / ngHide - showing / hiding HTML element</li>
+			<li>ngIf - removes or recreates a portion of DOM</li>
+		</ul>
+	</section>
+</section>
+
+<section>
+	<section id="backend-communication">
+			<h2>Backend communication with $http service</h2>
+		  <pre><code class="javascript" contenteditable data-trim>
+		  // Simple GET request example:
+$http({
+  method: 'GET',
+  url: '/someUrl'
+}).then(function successCallback(response) {
+    // this callback will be called asynchronously
+    // when the response is available
+  }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+  });
+  
+// shortcut methods
+$http.get('/someUrl', config).then(successCallback, errorCallback);
+$http.post('/someUrl', data, config).then(successCallback, errorCallback);
+			</code></pre>
+			<p><small><a href="https://docs.angularjs.org/api/ng/service/$http">https://docs.angularjs.org/api/ng/service/$http</a></small></p>
+	</section>
+	<section id="backend-communication">
+			<h2>Response object</h2>
+			<ul>
+				<li><b>data</b> – {string|Object} – The response body transformed with the transform functions.</li>
+				<li><b>status</b> – {number} – HTTP status code of the response.</li>
+				<li><b>headers</b> – {function([headerName])} – Header getter function.</li>
+				<li><b>config</b> – {Object} – The configuration object that was used to generate the request.</li>
+				<li><b>statusText</b> – {string} – HTTP status text of the response.</li>
+			</ul>
+			<p><small><a href="https://docs.angularjs.org/api/ng/service/$http">https://docs.angularjs.org/api/ng/service/$http</a></small></p>
+	</section>
+	
+		
+</section>
+
+</div>
+
+</div>
+<script src="base/reveal.js/lib/js/head.min.js"></script>
+<script src="base/reveal.js/js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'concave', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            { src: 'base/reveal.js/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            } },
+            { src: 'base/reveal.js/plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: 'base/reveal.js/plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: 'base/reveal.js/plugin/highlight/highlight.js', async: true, condition: function () {
+                return !!document.querySelector('pre code');
+            }, callback: function () {
+                hljs.initHighlightingOnLoad();
+            } },
+            { src: 'base/reveal.js/plugin/zoom-js/zoom.js', async: true },
+            { src: 'base/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+    });
+
+</script>
+
+</body>
+</html>
