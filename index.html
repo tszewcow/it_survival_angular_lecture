@@ -44,7 +44,7 @@
 <div class="slides">
 <section id="start">
     <h3><strong>AngularJS Basics</strong></h3>
-    <h2><img class="logo" src="img/AngularJS-large.png"></h2>
+    <h3><img class="logo" src="img/AngularJS-large.png"></h3>
 
 	<p>
         <small>Marek Matczak, Jarosław Fuczko, Tomasz Szewców</small>
@@ -52,7 +52,7 @@
 </section>
 
 	<section id="agenda">
-		<h2>Agenda</h2>
+		<h3>Agenda</h3>
 		<ol>
 			<li><a href="#/modules">Angular Modules</a></li>
 			<li><a href="#/dependncy-injection">Dependency Injection</a></li>
@@ -98,7 +98,7 @@ angular.module('moduleName');
 
 <section>
 	<section id="dependncy-injection">
-		<h2>Dependency Injection</h2>
+		<h3>Dependency Injection</h3>
 		<blockquote>
         Dependency Injection (DI) is a software design pattern that deals with how components get hold of their dependencies.
 		</blockquote>
@@ -108,7 +108,7 @@ The Angular injector subsystem is in charge of creating components, resolving th
 		<p><small><a href="https://docs.angularjs.org/guide/di">https://docs.angularjs.org/guide/di</a></small></p>
 	</section>
 	<section>
-	<h2>Injecting dependencies</h2>
+	<h3>Injecting dependencies</h3>
 	<pre><code class="javascript" contenteditable data-trim>
 	angular.module('moduleName').controller('SomeController', function($scope, someService){
 	'use strict';
@@ -126,7 +126,7 @@ The Angular injector subsystem is in charge of creating components, resolving th
 	
 <section>
 	<section id="controllers">
-		<h2>Controller recipe</h2>
+		<h3>Controller recipe</h3>
 		  <pre><code class="javascript" contenteditable data-trim>
 	angular.module('someModule').controller('MyFirstController', function($scope){
     'use strict';
@@ -149,7 +149,7 @@ The Angular injector subsystem is in charge of creating components, resolving th
 	</section>
 	
 	<section>
-		<h2>Controller recipe - alternative</h2>
+		<h3>Controller recipe - alternative</h3>
 		  <pre><code class="javascript" contenteditable data-trim>
 	angular.module('someModule').controller('MyFirstController', function($scope){
     'use strict';
@@ -177,7 +177,7 @@ The Angular injector subsystem is in charge of creating components, resolving th
 
 <section>
 	<section id="services-factories">
-		<h2>Service recipe (with <b>service</b>)</h2>
+		<h3>Service recipe (with <b>service</b>)</h3>
 		  <pre><code class="javascript" contenteditable data-trim>
 angular.module('someModule').service('myService', function(){
     'use strict';
@@ -190,7 +190,7 @@ angular.module('someModule').service('myService', function(){
 	</section>
 
 	<section>
-		<h2>Service recipe (with <b>factory</b>)</h2>
+		<h3>Service recipe (with <b>factory</b>)</h3>
 		 <pre><code class="javascript" contenteditable data-trim>
 angular.module('someModule').factory('myService2', function(){
     'use strict'; 
@@ -210,7 +210,7 @@ angular.module('someModule').factory('myService2', function(){
 
 <section>
 	<section id="useful-directives">
-		<h2>Useful built-in directives</h2>
+		<h3>Useful built-in directives</h3>
 		<ul>
 			<li>ngModel - two way binding</li>
 			<li>ngBind - one way binding</li>
@@ -224,7 +224,7 @@ angular.module('someModule').factory('myService2', function(){
 	</section>
 	
 	<section>
-		<h2>Exercise 1</h2>
+		<h3>Exercise 1</h3>
 		<small>
 			<ol>
 				<li>Implement booksListCntl in the file books-list.controller.js</li>
@@ -244,14 +244,14 @@ angular.module('someModule').factory('myService2', function(){
 		</small>
 	</section>
 	<section>
-		<h2>Exercise 1 solution mockup</h2>
+		<h3>Exercise 1 solution mockup</h3>
 		<img src="img/exercise_1.PNG" />
 	</section>
 </section>
 
 <section>
 	<section id="forms">
-            <h2>Angular Forms</h2>
+            <h3>Angular Forms</h3>
             <img src="img/angular-form.svg">
 			<ul>
 				<li>decoupled the model and the view</li>
@@ -259,7 +259,7 @@ angular.module('someModule').factory('myService2', function(){
 			</ul>
         </section>
 	<section>
-		<h2>Form example</h2>
+		<h3>Form example</h3>
 		<pre><code data-trim class="xml">
 <form name="myForm" novalidate>
     <input name="firstName" ng-model="user.firstName"/>
@@ -278,7 +278,7 @@ myForm: {           //form name
 	</section>
 	
 	<section>
-		<h2>Form validation status</h2>
+		<h3>Form validation status</h3>
 		<pre><code contenteditable data-trim>
 myForm: {                                   //form name
     $dirty: false, $pristine: true,         //dirty or pristine
@@ -297,7 +297,7 @@ myForm: {                                   //form name
 	</section>
 	
 	<section>
-		<h2>Exercise 2</h2>
+		<h3>Exercise 2</h3>
 		<small>
 			<ol>
 				<li>Add ui.bootstrap module dependency to the app.books-management module</li>
@@ -322,12 +322,12 @@ myForm: {                                   //form name
 	</section>
 	
 	<section>
-		<h2>Exercise 2 solution mockup</h2>
+		<h3>Exercise 2 solution mockup</h3>
 		<img src="img/exercise_2.PNG" />
 	</section>
 	
 	<section>
-		<h2>Exercise 3</h2>
+		<h3>Exercise 3</h3>
 		<small>
 			<ol>
 				<li>Implement html template for edit modal dialog</li>
@@ -342,7 +342,7 @@ myForm: {                                   //form name
 
 <section>
 	<section id="backend-communication">
-			<h2>Backend communication with $http service</h2>
+			<h3>Backend communication with $http service</h3>
 		  <pre><code class="javascript" contenteditable data-trim>
 		  // Simple GET request example:
 $http({
@@ -363,7 +363,7 @@ $http.post('/someUrl', data, config).then(successCallback, errorCallback);
 			<p><small><a href="https://docs.angularjs.org/api/ng/service/$http">https://docs.angularjs.org/api/ng/service/$http</a></small></p>
 	</section>
 	<section>
-			<h2>Response object</h2>
+			<h3>Response object</h3>
 			<ul>
 				<li><b>data</b> – {string|Object} – The response body transformed with the transform functions.</li>
 				<li><b>status</b> – {number} – HTTP status code of the response.</li>
@@ -374,7 +374,7 @@ $http.post('/someUrl', data, config).then(successCallback, errorCallback);
 			<p><small><a href="https://docs.angularjs.org/api/ng/service/$http">https://docs.angularjs.org/api/ng/service/$http</a></small></p>
 	</section>
 	<section>
-	<h2>Exercise 4</h2>
+	<h3>Exercise 4</h3>
 		<small>
 			<ol>
 				<li>Implement angular service for backend communication - booksData</li>
@@ -398,7 +398,7 @@ $http.post('/someUrl', data, config).then(successCallback, errorCallback);
 	</section>
 	
 	<section>
-		<h2>Exercise 4 solution mockup</h2>
+		<h3>Exercise 4 solution mockup</h3>
 		<img src="img/exercise_4.PNG" />
 	</section>
 	
@@ -410,9 +410,283 @@ $http.post('/someUrl', data, config).then(successCallback, errorCallback);
 
 <section>
 		<section id="tests">
-			<h2>Unit testing</h2>
+			<h3>Unit testing - tools</h3>
+
+			<ul>
+				<li><strong>Karma</strong> - tool used to spawn a web server which loads your application's source code and executes your tests.</li>
+				<li><strong>Jasmine</strong> - BDD framework for JavaScript, provides functions to help with structuring tests and making assertions.</li>
+			</ul>
+			<p><small><a href="https://docs.angularjs.org/guide/unit-testing">https://docs.angularjs.org/guide/unit-testing</a></small></p>
 		</section>
+		
+		<section>
+			<h3>Structuring tests</h3>
+      <pre><code class="javascript" contenteditable data-trim>
+          describe('A suite', function() {
+      it('contains spec with an expectation', function() {
+        expect(true).toBe(true);
+      });
+});
+      </code></pre>
+</section>
+
+<section>
+		<h3>Karma configuration</h3>
+		  <pre class="fragment"><code class="javascript" contenteditable data-trim>
+// install Karma
+npm install karma
+		  </code></pre>
+				<pre class="fragment"><code class="javascript" contenteditable data-trim>
+// install plugins
+npm install karma-jasmine
+npm install karma-phantomjs-launcher
+npm install karma-chrome-launcher
+		  </code></pre>
+		  <pre class="fragment"><code class="javascript" contenteditable data-trim>
+// run Karma
+./node_modules/karma/bin/karma start / init / run
+// alternative
+npm install -g karma-cli
+karma start / init / run
+		  </code></pre>
+		  <p><small><a href="http://karma-runner.github.io/0.13/intro/installation.html">http://karma-runner.github.io/0.13/intro/installation.html</a></small></p>
 	</section>
+	
+	<section>
+		<h3>Karma configuration file</h3>
+		  <pre><code class="javascript" contenteditable data-trim>
+// can be created with karma init command
+module.exports = function (config) {
+	config.set({
+		basePath: '',
+		frameworks: [],
+		files: [],
+	hostname: 'localhost',
+		port: 9876,
+		autoWatch: false,
+		browsers: [],
+		singleRun: false,
+	})
+};
+// for debugging in a browser:
+// - set single run to true
+// - select other browser
+		  </code></pre>
+			  
+		  <p><small><a href="http://karma-runner.github.io/0.8/config/configuration-file.html">http://karma-runner.github.io/0.8/config/configuration-file.html</a></small></p>
+	</section>
+</section>
+	</section>
+	
+	<section>
+		<h3>Testing a controller</h3>
+		  <pre><code class="javascript" contenteditable data-trim>
+describe('SampleCntl tests', function() {
+	'use strict';
+
+	var $scope;
+
+	beforeEach(module('someModule'));
+
+	beforeEach(inject(function($controller, $rootScope){
+		$scope = $rootScope.$new();
+		$controller('SampleCntl', {$scope: $scope});
+	}));
+
+	describe('some suite', function() {
+		it('some spec', function() {
+			// given 
+			// when 
+			$scope.someMethod();
+			// then
+		});
+	});
+});
+		  </code></pre>
+	</section>
+	
+	<section>
+		<h3>Testing a controller - alternative</h3>
+		  <pre><code class="javascript" contenteditable data-trim>
+describe('SampleCntl tests', function() {
+	'use strict';
+
+	var cntl;
+
+	beforeEach(module('someModule'));
+
+	beforeEach(inject(function($controller){
+		cntl = $controller('SampleCntl', {});
+	}));
+
+	describe('some suite', function() {
+		it('some spec', function() {
+			// given 
+			// when 
+			cntl.someMethod();
+			// then
+		});
+	});
+});
+		  </code></pre>
+	</section>
+	
+	<section>
+		<h3>Testing controller with mocks</h3>
+		  <pre><code class="javascript" contenteditable data-trim>
+		// sample controller code
+angular.module('someModule').controller('SomeCntl', function($scope, $location){
+	'use strict';
+	
+	$scope.goToDialog = function(path){
+		$location.path(path);
+	}
+});
+
+// test code
+
+var $scope, locationMock = {
+	path: angular.noop
+};
+			
+beforeEach(inject(function($controller, $rootScope){
+	$scope = $rootScope.$new();
+	// injection of mocked $location service
+	$controller('SomeCntl', {$scope: $scope, $location: locationMock});
+}));
+		  </code></pre>
+	</section>
+	
+	<section>
+	<h3>Exercise 5</h3>
+		<small>
+			<ol>
+				<li>Add tests for BookListCntl into the book-list.controller.spec.js</li>
+				<li>Test all exposed methods</li>
+				<li>For methods calling $modal service - add spy and check if spied method was called</li>
+				<li>Run tests with gulp test command</li>
+				<li>Run tests in debug mode with gulp test:tdd:debug command</li>
+			</ol>
+		</small>
+	</section>
+	
+		<section id="testing-services">
+			<h3>Testing a service</h3>
+		  <pre><code class="javascript" contenteditable data-trim>
+	  describe('data service tests', function () {
+	  'use strict';
+
+	  var someDataService;
+	  
+	  beforeEach(module('app'));
+
+	  beforeEach(inject(function (_someDataService_) {
+		someDataService = _someDataService_;
+	  }));
+
+	  describe('get data method', function () {
+		  it('should return data', function () {
+			  // given
+			  var data = [];
+			  // when
+			  data = someDataService.getData();
+			  // then
+			  expect(data.length).toEqual(10);
+		  });
+	  });
+});
+		  </code></pre>
+	</section>
+
+	<section>
+		<h3>Testing service with mocks</h3>
+		  <pre><code class="javascript" contenteditable data-trim>
+// sample service code
+angular.module('someModule').factory('serviceUnderTests', function('otherService'){
+	'use strict';
+	var data = [];
+	
+	return {
+		getData: function(){
+			angular.copy(otherService.getData(), data);
+		},
+		getCurrent: function(){
+			return data;
+		}
+	};
+});
+
+// test code
+var otherServiceMock = {getData: function(){return [1,2,3]}};
+var serviceUnderTests;
+
+beforeEach(function(){
+	module('someModule');
+	
+	module(function($provide){
+		// injecting other service with $provide service
+		$provide.value('otherService', otherServiceMock);
+	);
+});
+beforeEach(function(_serviceUnderTests_){
+	serviceUnderTests = _serviceUnderTests_;
+});
+		  </code></pre>
+	</section>
+
+	<section>
+		<h3>Testing with $httpBackend</h3>
+		  <pre><code class="javascript" contenteditable data-trim>
+var booksData, $httpBackend;
+
+beforeEach(inject(function (_booksData_, _$httpBackend_) {
+	booksData = _booksData_;
+	$httpBackend = _$httpBackend_;
+}));
+
+afterEach(function () {
+	// then
+	$httpBackend.verifyNoOutstandingExpectation();
+	$httpBackend.verifyNoOutstandingRequest();
+});
+
+it('should load books', function () {
+	// given
+	var searchParams = {title: 'title', author: 'author'}, books = [], response = [
+		{id: 0, title: 'title1'},
+		{id: 1, title: 'title2'}
+	];
+	$httpBackend.expectGET('/books-management/books-list/books.json?author=author&title=title').respond(response);
+	// when
+	booksData.getBooks(searchParams).then(function (response) {
+	books = response.data;
+	});
+	$httpBackend.flush();
+	// then
+	expect(books).toEqual(response);
+	});
+		  </code></pre>
+	</section>
+	
+	<section>
+	<h3>Exercise 6</h3>
+		<small>
+			<ol>
+				<li>Add tests for booksData service in the books-data.service.spec.js</li>
+				<li>Test all exposed methods</li>
+				<li>Use $httpBackend and remember to call $httpBackend.flush()</li>
+				<li>Run tests with gulp test command</li>
+				<li>Run tests in debug mode with gulp test:tdd:debug command</li>
+			</ol>
+		</small>
+	</section>
+	
+	<section>
+	<p>Fallback branches for exercies 5 and 6:</p>
+	<p>step-6-testing-controller</p>
+	<p>step-7-testing-service</p>
+	</section>
+</section>
 
 </div>
 
