@@ -242,7 +242,6 @@ angular.module('someModule').factory('myService2', function(){
 				</ul>
 			</ol>
 		</small>
-		<p>Branch with fallback solution: step-2-first-controller</p>
 	</section>
 	<section>
 		<h2>Exercise 1 solution mockup</h2>
@@ -319,7 +318,7 @@ myForm: {                                   //form name
 				<li>Call $modal.open with correct parameter object on Add button click</li>
 			</ol>
 		</small>
-		<p>Branch with fallback solution: step-3-forms</p>
+		<p><small><strong>Branch with fallback solution when exercise 1 not done: step-2-first-controller</strong></small></p>
 	</section>
 	
 	<section>
@@ -336,7 +335,7 @@ myForm: {                                   //form name
 				<li>Call modal edit dialog on Edit button click</li>
 			</ol>
 		</small>
-		<p>Branch with fallback solution: step-4-edit-modal</p>
+		<p><small><strong>Branch with fallback solution when exercise 2 not done: step-3-forms</strong></small></p>
 	</section>
 		
 </section>
@@ -363,7 +362,7 @@ $http.post('/someUrl', data, config).then(successCallback, errorCallback);
 			</code></pre>
 			<p><small><a href="https://docs.angularjs.org/api/ng/service/$http">https://docs.angularjs.org/api/ng/service/$http</a></small></p>
 	</section>
-	<section id="backend-communication">
+	<section>
 			<h2>Response object</h2>
 			<ul>
 				<li><b>data</b> – {string|Object} – The response body transformed with the transform functions.</li>
@@ -395,7 +394,7 @@ $http.post('/someUrl', data, config).then(successCallback, errorCallback);
 				<li>1st stream - get books from the json file. Other methods should be written, but they won't work due to missing server implementation</li>
 			</ol>
 		</small>
-		<p>Branch with fallback solution: step-5-backend-communication</p>
+		<p><small><strong>Branch with fallback solution when exercise 3 not done: step-4-edit-modal</strong></small></p>
 	</section>
 	
 	<section>
@@ -403,8 +402,17 @@ $http.post('/someUrl', data, config).then(successCallback, errorCallback);
 		<img src="img/exercise_4.PNG" />
 	</section>
 	
-		
+	<section>
+	<p>Branch with fallback solution after exercise 4:</p>
+	<p>step-5-backend-communication</p>
+	</section>
 </section>
+
+<section>
+		<section id="tests">
+			<h2>Unit testing</h2>
+		</section>
+	</section>
 
 </div>
 
